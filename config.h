@@ -86,22 +86,22 @@ unsigned int tabspaces = 8;
 unsigned int alpha = 0xed;
 
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
+	"#1c1c1c", /* hard contrast: #1d2021 / soft contrast: #32302f */
+	"#d70000",
+	"#5faf00",
+	"#ffff00",
 	"#458588",
 	"#b16286",
 	"#689d6a",
-	"#a89984",
-	"#928374",
+	"#c6c6c6",
+	"#585858",
 	"#fb4934",
 	"#b8bb26",
 	"#fabd2f",
 	"#83a598",
 	"#d3869b",
 	"#8ec07c",
-	"#ebdbb2",
+	"#d0d0d0",
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
 	"black",   /* 256 -> bg */
@@ -193,7 +193,7 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
+#define MODKEY ControlMask
 
 MouseKey mkeys[] = {
 	/* button               mask            function        argument */
@@ -215,32 +215,22 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_Prior,       zoom,           {.f = +1} },
-	{ MODKEY|ShiftMask,     XK_Next,        zoom,           {.f = -1} },
-	{ MODKEY,		XK_Home,	zoomreset,	{.f =  0} },
+	{ MODKEY,       		XK_Home,    	zoomreset,  	{.f =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
-	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
+	{ MODKEY|ShiftMask,     XK_c,           clipcopy,       {.i =  0} },
+	{ MODKEY|ShiftMask,     XK_v,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_p,           selpaste,       {.i =  0} },
-	{ MODKEY,		XK_Num_Lock,	numlock,	{.i =  0} },
+	{ MODKEY,	        	XK_Num_Lock,	numlock,    	{.i =  0} },
 	{ MODKEY,               XK_Control_L,   iso14755,       {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,            	XK_k,  		kscrollup,      {.i =  1} },
-	{ MODKEY,            	XK_j,   	kscrolldown,    {.i =  1} },
-	{ MODKEY,            	XK_Up,  	kscrollup,      {.i =  1} },
-	{ MODKEY,            	XK_Down,   	kscrolldown,    {.i =  1} },
-	{ MODKEY,	        XK_u,		kscrollup,      {.i = -1} },
-	{ MODKEY,  		XK_d,		kscrolldown,   	{.i = -1} },
-	{ MODKEY|ShiftMask,     XK_Up,          zoom,           {.f = +1} },
-	{ MODKEY|ShiftMask,     XK_Down,        zoom,           {.f = -1} },
-	{ MODKEY|ShiftMask,     XK_K,           zoom,           {.f = +1} },
-	{ MODKEY|ShiftMask,     XK_J,           zoom,           {.f = -1} },
-	{ MODKEY|ShiftMask,     XK_U,           zoom,           {.f = +2} },
-	{ MODKEY|ShiftMask,     XK_D,           zoom,           {.f = -2} },
-    	{ MODKEY,		XK_l,		externalpipe,	{ .v = openurlcmd } },
+	{ MODKEY,            	XK_k,  	    	kscrollup,      {.i =  1} },
+	{ MODKEY,            	XK_j,           kscrolldown,    {.i =  1} },
+	{ MODKEY,            	XK_Up,          kscrollup,      {.i =  1} },
+	{ MODKEY,            	XK_Down,        kscrolldown,    {.i =  1} },
+	{ MODKEY|ShiftMask,     XK_plus,        zoom,           {.f = +1} },
+	{ MODKEY,               XK_plus,        zoom,           {.f = +1} },
+	{ MODKEY|ShiftMask,     XK_minus,       zoom,           {.f = -1} },
+	{ MODKEY,               XK_minus,       zoom,           {.f = -1} },
+    { MODKEY,	        	XK_l,   		externalpipe,	{ .v = openurlcmd } },
 };
 
 /*
