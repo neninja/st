@@ -193,7 +193,8 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY ControlMask
+/* Não consegui deixar Ctrl por algum motivo */
+#define MODKEY Mod1Mask
 
 MouseKey mkeys[] = {
 	/* button               mask            function        argument */
@@ -217,8 +218,8 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ MODKEY,       		XK_Home,    	zoomreset,  	{.f =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_c,           clipcopy,       {.i =  0} },
-	{ MODKEY|ShiftMask,     XK_v,           clippaste,      {.i =  0} },
+	{ MODKEY,     XK_c,           clipcopy,       {.i =  0} },
+	{ MODKEY,     XK_v,           clippaste,      {.i =  0} },
 	{ MODKEY,               XK_p,           selpaste,       {.i =  0} },
 	{ MODKEY,	        	XK_Num_Lock,	numlock,    	{.i =  0} },
 	{ MODKEY,               XK_Control_L,   iso14755,       {.i =  0} },
