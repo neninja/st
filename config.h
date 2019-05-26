@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
-static int borderpx = 2;
+static int borderpx = 20;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -197,13 +197,13 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 
 MouseKey mkeys[] = {
-	/* button               mask            function        argument */
-	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
-	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
-	{ Button4,              MODKEY,         kscrollup,      {.i =  1} },
-	{ Button5,              MODKEY,         kscrolldown,    {.i =  1} },
-	{ Button4,              MODKEY|ShiftMask,         zoom,      {.f =  +1} },
-	{ Button5,              MODKEY|ShiftMask,         zoom,    {.f =  -1} },
+	/* button               mask                function        argument */
+	{ Button4,              ShiftMask,          kscrollup,      {.i =  1} },
+	{ Button5,              ShiftMask,          kscrolldown,    {.i =  1} },
+	{ Button4,              MODKEY,             kscrollup,      {.i =  1} },
+	{ Button5,              MODKEY,             kscrolldown,    {.i =  1} },
+	{ Button4,              MODKEY|ShiftMask,   zoom,           {.f =  +1} },
+	{ Button5,              MODKEY|ShiftMask,   zoom,           {.f =  -1} },
 };
 
 static char *openurlcmd[] = { "/bin/sh", "-c",
